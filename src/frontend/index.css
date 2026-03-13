@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Figtree:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm saffron/amber/cream palette */
+    --background: 0.97 0.01 85;
+    --foreground: 0.18 0.04 35;
+
+    --card: 0.99 0.005 80;
+    --card-foreground: 0.18 0.04 35;
+
+    --popover: 0.99 0.005 80;
+    --popover-foreground: 0.18 0.04 35;
+
+    /* Saffron/Amber primary */
+    --primary: 0.68 0.17 55;
+    --primary-foreground: 0.99 0.005 80;
+
+    /* Deep crimson secondary */
+    --secondary: 0.42 0.14 25;
+    --secondary-foreground: 0.97 0.01 85;
+
+    --muted: 0.92 0.02 75;
+    --muted-foreground: 0.48 0.05 45;
+
+    /* Golden accent */
+    --accent: 0.78 0.14 75;
+    --accent-foreground: 0.18 0.04 35;
+
+    --destructive: 0.58 0.22 27;
+    --destructive-foreground: 0.99 0.005 80;
+
+    --border: 0.88 0.04 65;
+    --input: 0.88 0.04 65;
+    --ring: 0.68 0.17 55;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.68 0.17 55;
+    --chart-2: 0.42 0.14 25;
+    --chart-3: 0.78 0.14 75;
+    --chart-4: 0.55 0.18 35;
+    --chart-5: 0.72 0.12 60;
+
+    --sidebar: 0.99 0.005 80;
+    --sidebar-foreground: 0.18 0.04 35;
+    --sidebar-primary: 0.68 0.17 55;
+    --sidebar-primary-foreground: 0.99 0.005 80;
+    --sidebar-accent: 0.92 0.02 75;
+    --sidebar-accent-foreground: 0.18 0.04 35;
+    --sidebar-border: 0.88 0.04 65;
+    --sidebar-ring: 0.68 0.17 55;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Figtree', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: oklch(0.92 0.02 75);
+}
+::-webkit-scrollbar-thumb {
+  background: oklch(0.68 0.17 55);
+  border-radius: 3px;
+}
+
+/* Pattern overlay */
+.pattern-bg {
+  background-image: 
+    radial-gradient(circle at 20% 50%, oklch(0.68 0.17 55 / 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, oklch(0.78 0.14 75 / 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 60% 80%, oklch(0.42 0.14 25 / 0.06) 0%, transparent 45%);
+}
+
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    oklch(0.12 0.04 35 / 0.3) 0%,
+    oklch(0.12 0.04 35 / 0.65) 60%,
+    oklch(0.12 0.04 35 / 0.85) 100%
+  );
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, oklch(0.68 0.17 55), oklch(0.78 0.14 75));
+  border-radius: 2px;
+}
+
+.food-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px oklch(0.42 0.14 25 / 0.15);
+}
